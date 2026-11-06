@@ -49,7 +49,7 @@ Then open http://localhost:8000.
 
 ## Editing products
 
-Product names, prices and notes are in the `PRODUCTS` list in `js/products.js`. Each product's `image` is a file name in `assets/products/` (without `.webp`). To add or swap a product, put the photo in that folder and add a line to the list.
+Product names, prices and notes are in the `PRODUCTS` list in `js/products.js`. Each product's `id` is its photo's file name in `assets/products/` (without `.webp`). To add or swap a product, put the photo in that folder and add a line to the list.
 
 ## Tweaking the swing
 
