@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maison Pois — Polka-dot pieces for spring</title>
+  <meta name="description" content="Maison Pois: nine polka-dot pieces in cotton poplin and silk crêpe. A showcase landing page.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="assets/wardrobe-rack.glb" as="fetch" crossorigin>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three/build/three.module.js",
+        "three/addons/": "./vendor/three/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#">Maison Pois</a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#">New in</a></li>
+        <li><a href="#">Dresses</a></li>
+        <li><a href="#">Shirts</a></li>
+        <li><a href="#">Scarves</a></li>
+      </ul>
+    </nav>
+    <a class="bag" href="#" aria-label="Bag, 0 items">Bag <span class="bag-count">0</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="hero-title" aria-label="Spotted on the rail">
+        <span class="line">Spotted</span>
+        <span class="line line-2">on the rail</span>
+      </h1>
+
+      <div class="stage" id="stage">
+        <canvas id="rack" aria-label="3D clothing rack with nine polka-dot garments. Move your cursor across the clothes to make them swing." role="img"></canvas>
+        <p class="stage-status" id="stage-status" role="status">Hanging the clothes…</p>
+      </div>
+
+      <div class="hero-copy">
+        <p>Nine polka-dot pieces for spring, cut in cotton poplin and silk crêpe. Dresses, shirts and one very good scarf.</p>
+        <a class="cta" href="#">Shop the rail</a>
+      </div>
+
+      <p class="hint" id="hint" aria-hidden="true">
+        <span class="hint-dot"></span>
+        <span class="hint-pointer">Run your cursor along the clothes</span>
+        <span class="hint-touch">Tap a piece to set it swinging</span>
+      </p>
+    </section>
+  </main>
+
+  <script type="module" src="js/hero.js"></script>
+</body>
+</html>
