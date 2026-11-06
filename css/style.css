@@ -151,3 +151,108 @@ a { color: inherit; }
   .hint-dot { animation: none; }
   #rack { transition: none; }
 }
+
+/* ------------------------------------------------------------------------
+   Shared bits added with the New In page
+*/
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+.nav-links a[aria-current="page"] { border-color: currentColor; }
+.bag-count.is-bumped { animation: bump .45s ease; }
+@keyframes bump { 40% { transform: scale(1.35); background: var(--cherry); } }
+
+/* ------------------------------------------------------------------------
+   New In page
+   Each row of products shares one continuous rail: the tiles touch, and a
+   dark bar runs through all of them at the height of the hanger hooks.
+*/
+.nav-static { position: relative; }
+
+.new-in { padding: 1rem 0 5rem; }
+.new-in-head {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+  gap: 1rem 3rem;
+  padding: 1.5rem var(--pad) 2.5rem;
+}
+.new-in-head h1 {
+  margin: 0;
+  font: 400 clamp(3.5rem, 10vw, 9rem)/.85 var(--display);
+  letter-spacing: -.03em;
+}
+.new-in-head p { margin: 0; max-width: 26rem; color: var(--dusk); }
+
+.products {
+  list-style: none; margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 3rem;
+}
+.product { display: flex; flex-direction: column; }
+
+.product-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: #E4DED9;
+  overflow: hidden;
+  cursor: grab;
+}
+.product-media::before {         /* the rail */
+  content: ""; position: absolute; left: 0; right: 0; top: 10%;
+  height: 4px; translate: 0 -50%;
+  background: var(--ink);
+}
+.product-media img,
+.product-3d {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  transition: opacity .25s ease;
+}
+.product-media img { object-fit: contain; }
+.product-3d { opacity: 0; display: block; }
+.product.is-3d .product-3d { opacity: 1; }
+.product.is-3d img { opacity: 0; }
+
+.product-info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "name price" "meta meta" "add add";
+  gap: .15rem 1rem;
+  padding: 1rem var(--pad) 0 clamp(1rem, 2vw, 1.5rem);
+}
+.product-name { grid-area: name; margin: 0; font: 500 1.05rem/1.35 var(--body); }
+.product-price { grid-area: price; margin: 0; font-weight: 600; }
+.product-meta { grid-area: meta; margin: 0; font-size: .9rem; color: var(--dusk); }
+.add {
+  grid-area: add; justify-self: start;
+  margin-top: .8rem;
+  padding: .6rem 1.2rem;
+  font: 600 .9rem/1 var(--body);
+  color: var(--ink); background: transparent;
+  border: 1.5px solid var(--ink); border-radius: 999px;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.add:hover { background: var(--ink); color: var(--chalk); }
+.add.is-added { background: var(--cherry); border-color: var(--cherry); color: var(--chalk); }
+
+.foot {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
+  padding: 2rem var(--pad) 2.5rem;
+  border-top: 1px solid rgba(31, 36, 64, .15);
+  font-size: .9rem; color: var(--dusk);
+}
+.foot p { margin: 0; }
+.foot a { color: var(--ink); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .products { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .new-in-head { padding-bottom: 1.75rem; }
+  .product-info { padding: .8rem 1rem 0; grid-template-areas: "name name" "meta price" "add add"; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bag-count.is-bumped { animation: none; }
+}

@@ -7,10 +7,15 @@ Plain HTML, CSS and JavaScript using [Three.js](https://threejs.org) (included i
 ## Files
 
 ```
-index.html               page markup
-css/style.css            layout, colours, type
-js/hero.js               3D scene and swing physics
+index.html               home page with the 3D rack hero
+new-in.html              New In product page
+css/style.css            layout, colours, type (both pages)
+js/hero.js               hero 3D scene and swing physics
+js/new-in.js             product grid, 3D turn on hover, Add to bag
+js/frame.js              shared camera framing for single garments
+js/bag.js                bag counter shared by both pages (kept in the browser)
 assets/wardrobe-rack.glb 3D model (rack + 9 garments, compressed, 2.1 MB)
+assets/products/         still product images rendered from the model
 vendor/three/            Three.js r170 (MIT licence)
 ```
 
@@ -39,6 +44,10 @@ Then open http://localhost:8000.
    ```
 3. In the repository, go to **Settings → Pages**. Under **Source**, choose **Deploy from a branch**, then pick `main` and `/ (root)` and save.
 4. After a minute or two, the site is live at `https://<your-username>.github.io/maison-pois/`.
+
+## Editing products
+
+Product names, prices and fabric notes are in the `PRODUCTS` list at the top of `js/new-in.js`. Each `piece` number matches a garment on the rack, counting from the left.
 
 ## Tweaking the swing
 
