@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bag — Maison Pois</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Ccircle cx=%228%22 cy=%228%22 r=%227%22 fill=%22%23B3262E%22/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=7">
+</head>
+<body class="page-bag">
+  <header class="nav nav-static">
+    <a class="brand" href="index.html">Maison Pois</a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="new-in.html">New in</a></li>
+      </ul>
+    </nav>
+    <a class="bag" href="bag.html" aria-current="page" aria-label="Bag, 0 items">Bag <span class="bag-count">0</span></a>
+  </header>
+
+  <main class="bag-page">
+    <header class="bag-head">
+      <h1>Bag</h1>
+      <p class="bag-summary-line" id="bag-summary-line"></p>
+    </header>
+
+    <div class="bag-layout" id="bag-layout">
+      <ul class="bag-items" id="bag-items" aria-label="Items in your bag"></ul>
+
+      <aside class="bag-total" aria-labelledby="total-title">
+        <h2 id="total-title">Order summary</h2>
+        <dl>
+          <div><dt>Subtotal</dt><dd id="subtotal">RM 0</dd></div>
+          <div><dt>Delivery</dt><dd id="delivery">Free</dd></div>
+          <div class="bag-grand"><dt>Total</dt><dd id="total">RM 0</dd></div>
+        </dl>
+        <button class="checkout" type="button" id="checkout">Checkout</button>
+        <p class="checkout-note" id="checkout-note" role="status"></p>
+      </aside>
+    </div>
+
+    <div class="bag-empty" id="bag-empty" hidden>
+      <p>Your bag is empty.</p>
+      <a class="cta" href="new-in.html">Browse New in</a>
+    </div>
+    <p class="visually-hidden" id="bag-status" role="status"></p>
+  </main>
+
+  <footer class="foot">
+    <a href="new-in.html">Continue shopping</a>
+    <p>Maison Pois is a showcase site. Nothing here is for sale.</p>
+  </footer>
+
+  <script type="module" src="js/bag-page.js?v=7"></script>
+</body>
+</html>

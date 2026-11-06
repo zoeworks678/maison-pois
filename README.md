@@ -9,11 +9,14 @@ Plain HTML, CSS and JavaScript using [Three.js](https://threejs.org) (included i
 ```
 index.html               home page with the 3D rack hero
 new-in.html              New In product page
+bag.html                 Bag page (items, quantities, totals)
 css/style.css            layout, colours, type (both pages)
 js/hero.js               hero 3D scene and swing physics
+js/products.js           product list (names, prices, photos) used by every page
 js/new-in.js             product grid and Add to bag
+js/bag-page.js           Bag page: quantities, remove, totals
 assets/products/         product photos
-js/bag.js                bag counter shared by both pages (kept in the browser)
+js/bag.js                the bag, shared by every page (kept in the visitor's browser)
 assets/wardrobe-rack.glb 3D model (rack + 9 garments, compressed, 2.1 MB)
 vendor/three/            Three.js r170 (MIT licence)
 ```
@@ -46,7 +49,7 @@ Then open http://localhost:8000.
 
 ## Editing products
 
-Product names, prices and fabric notes are in the `PRODUCTS` list at the top of `js/new-in.js`. Each product's `image` is a file name in `assets/products/` (without `.webp`). To add or swap a product, put the photo in that folder and add a line to the list.
+Product names, prices and notes are in the `PRODUCTS` list in `js/products.js`. Each product's `image` is a file name in `assets/products/` (without `.webp`). To add or swap a product, put the photo in that folder and add a line to the list.
 
 ## Tweaking the swing
 
