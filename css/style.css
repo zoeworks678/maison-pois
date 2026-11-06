@@ -131,7 +131,6 @@ a { color: inherit; }
 
 /* Small screens: headline above, rack in the middle, copy below. */
 @media (max-width: 720px) {
-  .nav-links { display: none; }
   .hero {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto auto;
