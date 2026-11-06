@@ -11,11 +11,10 @@ index.html               home page with the 3D rack hero
 new-in.html              New In product page
 css/style.css            layout, colours, type (both pages)
 js/hero.js               hero 3D scene and swing physics
-js/new-in.js             product grid, 3D turn on hover, Add to bag
-js/frame.js              shared camera framing for single garments
+js/new-in.js             product grid, hover photo swap, Add to bag
 js/bag.js                bag counter shared by both pages (kept in the browser)
 assets/wardrobe-rack.glb 3D model (rack + 9 garments, compressed, 2.1 MB)
-assets/products/         still product images rendered from the model
+assets/products/         product photos rendered from the model (front + turned view)
 vendor/three/            Three.js r170 (MIT licence)
 ```
 
@@ -47,7 +46,7 @@ Then open http://localhost:8000.
 
 ## Editing products
 
-Product names, prices and fabric notes are in the `PRODUCTS` list at the top of `js/new-in.js`. Each `piece` number matches a garment on the rack, counting from the left.
+Product names, prices and fabric notes are in the `PRODUCTS` list at the top of `js/new-in.js`. Each `piece` number matches the photos `piece-N.webp` (front) and `piece-N-alt.webp` (shown on hover). The first product in the list is shown large.
 
 ## Tweaking the swing
 
