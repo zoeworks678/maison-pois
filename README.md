@@ -14,7 +14,6 @@ js/hero.js               hero 3D scene and swing physics
 js/new-in.js             product grid, hover photo swap, Add to bag
 js/bag.js                bag counter shared by both pages (kept in the browser)
 assets/wardrobe-rack.glb 3D model (rack + 9 garments, compressed, 2.1 MB)
-assets/products/         product photos rendered from the model (front + turned view)
 vendor/three/            Three.js r170 (MIT licence)
 ```
 
@@ -46,7 +45,7 @@ Then open http://localhost:8000.
 
 ## Editing products
 
-Product names, prices and fabric notes are in the `PRODUCTS` list at the top of `js/new-in.js`. Each `piece` number matches the photos `piece-N.webp` (front) and `piece-N-alt.webp` (shown on hover). The first product in the list is shown large.
+Product names, prices and fabric notes are in the `PRODUCTS` list at the top of `js/new-in.js`. Photos are free stock photos from [Pexels](https://www.pexels.com/license/), loaded straight from Pexels. `photo` is the Pexels photo id (the number at the end of a Pexels photo page URL), and the optional `turn` is a second photo shown on hover. To swap a photo, find one on Pexels and paste its id. The first product in the list is shown large.
 
 ## Tweaking the swing
 
